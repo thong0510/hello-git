@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+    <form th:action="@{/user/edit}" method="post">
+        <div>
+            <input name="id" type="hidden"  th:value="${user.id}"/>
+        </div>
+        <div>
+            <label>Name</label> <input name="name" type="text" placeholder="Name" required="required" th:value="${user.name}"/>
+        </div>
+        <div>
+            <label>Age</label><input type="number" name="age" placeholder="Age" th:value="${user.age}"/>
+        </div>
+        <div>
+            <label>Email</label><input type="email" name="email" placeholder="email" th:value="${user.email}"/>
+        </div>
+        <div>
+            <label>Phone</label><input type="number" name="phone" placeholder="phone" th:value="${user.phone}"/>
+        </div>
+        <div>
+            <label>Gender</label>
+            <label >
+                <select name="gender">
+                <option value="Male">Nam</option>
+                <option value="Female">Nữ</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>Address</label> <label>
+            <input type="text" name="address" placeholder="address" th:value="${user.address}"/>
+        </label>
+        </div>
+        <div>
+            <label>Username</label><label>
+            <input type="text" name="username" placeholder="username" required="required" th:value="${user.username}"/>
+        </label>
+        </div>
+        <div>
+            <label>Password</label>
+            <label>
+            <input type="password" name="password" placeholder="password" required="required" th:value="${user.password}"/>
+            </label>
+        </div>
+        <div>
+            <label>Role</label> <label>
+            <select name="role">
+            <option value="ROLE_MEMBER">ROLE_MEMBER</option>
+            <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+        </select>
+        </label>
+        </div>
+        <div>
+            <button type="submit">UPDATE</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

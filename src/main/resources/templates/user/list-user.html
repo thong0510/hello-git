@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List User</title>
+</head>
+<body>
+    <div>
+      <table>
+        <tr>
+          <td>Id</td>
+          <td>Name</td>
+          <td>Age</td>
+          <td>Email</td>
+          <td>Phone</td>
+          <td>Role</td>
+          <td>Username</td>
+          <td>Enable</td>
+          <td>Gender</td>
+          <td>Address</td>
+          <td>Option</td>
+        </tr>
+
+        <!--/*@thymesVar id="users" type="com.fpt.model.UserDTO"*/-->
+        <tr th:each="user: ${users}" >
+          <!--/*@thymesVar id="user" type="com.fpt.model.UserDTO"*/-->
+          <td th:text="${user.id}"></td>
+          <td th:text="${user.name}"></td>
+          <td th:text="${user.age}"></td>
+          <td th:text="${user.email}"></td>
+          <td th:text="${user.phone}"></td>
+          <td th:text="${user.role}"></td>
+          <td th:text="${user.username}"></td>
+          <td th:text="${user.enabled}"></td>
+          <td th:text="${user.gender}"></td>
+          <td th:text="${user.address}"></td>
+
+          <td><a th:href="@{'/user/edit?id=' + ${user.id}}">EDIT</a> |
+            <a th:href="@{'/user/delete?id=' + ${user.id}}">DELETE</a>
+
+          </td>
+
+        </tr>
+      </table>
+    </div>
+</body>
+</html>
