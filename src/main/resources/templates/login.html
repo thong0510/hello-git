@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME PAGE</title>
+</head>
+<body>
+  <h1>Hello Spring Boot</h1>
+  <p th:if="${e} != null">Tai khoan hoac mat khau khong dung</p>
+    <form method="post" th:action="@{/login}">
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button type="submit">Dang nhap</button>
+    </form>
+
+
+</body>
+</html>

@@ -5,6 +5,11 @@
     <title>Edit User</title>
 </head>
 <body>
+<div>
+    <form method="post" th:action="@{/logout}">
+        <button type="submit">Dang xuat</button>
+    </form>
+</div>
     <h1>Edit User</h1>
     <form th:action="@{/user/edit}" method="post">
         <div>

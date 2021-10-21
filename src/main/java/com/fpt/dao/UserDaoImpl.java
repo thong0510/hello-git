@@ -70,4 +70,10 @@ public class UserDaoImpl implements UserDao{
         }
         return null;
     }
+
+    @Override
+    public User getUserByUsername(String username) {
+        String jql = "SELECT u from User u where u.username = ?1";
+        return entityManager.createQuery(jql, User.class).setParameter(1, username).getSingleResult();
+    }
 }
